@@ -1,5 +1,10 @@
-// Find the Largest Number: Create a function that takes an array of numbers and returns the largest one.
-const findLargest = (arr) => Math.max(...arr);
+// Task 5: Find the Largest Number - Create a function that takes an array of numbers and returns the largest one.
+const readline = require('readline');
+const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 
-const numbersArray = [1, 5, 8, 3, 10];
-console.log(`The largest number in the array is: ${findLargest(numbersArray)}`);
+rl.question("Enter a list of numbers separated by spaces: ", (input) => {
+    const numbers = input.split(" ").map(Number);
+    const largestNumber = (arr) => Math.max(...arr);
+    console.log(`The largest number is: ${largestNumber(numbers)}`);
+    rl.close();
+});

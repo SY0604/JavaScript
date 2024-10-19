@@ -1,5 +1,10 @@
-// Remove Duplicates from Array: Write a function that removes duplicate values from an array.
-const removeDuplicates = (arr) => [...new Set(arr)];
+// Task 14: Remove Duplicates from Array - Write a function that removes duplicate values from an array.
+const readline = require('readline');
+const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 
-const arrayWithDuplicates = [1, 2, 2, 3, 4, 4, 5];
-console.log(`Array without duplicates: ${removeDuplicates(arrayWithDuplicates)}`);
+rl.question("Enter a list of numbers separated by spaces: ", (input) => {
+    const numbers = input.split(" ").map(Number);
+    const removeDuplicates = (arr) => [...new Set(arr)];
+    console.log(`Array without duplicates: ${removeDuplicates(numbers).join(" ")}`);
+    rl.close();
+});

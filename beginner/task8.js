@@ -1,5 +1,9 @@
-// Factorial of a Number: Write a function to calculate the factorial of a number.
-const factorial = (num) => num <= 1 ? 1 : num * factorial(num - 1);
+// Task 8: Factorial of a Number - Write a function to calculate the factorial of a number.
+const readline = require('readline');
+const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 
-const numberForFactorial = 5;
-console.log(`The factorial of ${numberForFactorial} is: ${factorial(numberForFactorial)}`);
+rl.question("Enter a number: ", (num) => {
+    const factorial = (n) => (n <= 1 ? 1 : n * factorial(n - 1));
+    console.log(`Factorial of ${num} is: ${factorial(parseInt(num))}`);
+    rl.close();
+});

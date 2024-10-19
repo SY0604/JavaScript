@@ -1,5 +1,9 @@
-// Count Vowels: Write a program to count the number of vowels in a given string.
-const countVowels = (str) => (str.match(/[aeiou]/gi) || []).length;
+// Task 7: Count Vowels - Write a program to count the number of vowels in a given string.
+const readline = require('readline');
+const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 
-const stringWithVowels = "hello world";
-console.log(`The number of vowels in "${stringWithVowels}" is: ${countVowels(stringWithVowels)}`);
+rl.question("Enter a string: ", (str) => {
+    const countVowels = (s) => s.match(/[aeiou]/gi)?.length || 0;
+    console.log(`Number of vowels: ${countVowels(str)}`);
+    rl.close();
+});

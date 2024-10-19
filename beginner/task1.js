@@ -1,6 +1,11 @@
-// Sum of Two Numbers: Write a function that takes two numbers and returns their sum.
-const sum = (a, b) => a + b;
+// Task 1: Sum of Two Numbers - Write a function that takes two numbers and returns their sum.
+const readline = require('readline');
+const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 
-const num1 = 5;
-const num2 = 3;
-console.log(`The sum of ${num1} and ${num2} is: ${sum(num1, num2)}`);
+rl.question("Enter the first number: ", (num1) => {
+    rl.question("Enter the second number: ", (num2) => {
+        const sum = (a, b) => a + b;
+        console.log(`The sum of ${num1} and ${num2} is: ${sum(parseFloat(num1), parseFloat(num2))}`);
+        rl.close();
+    });
+});

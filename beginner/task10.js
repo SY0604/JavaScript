@@ -1,15 +1,21 @@
-// Simple Calculator: Create a function that performs basic arithmetic operations (addition, subtraction, multiplication, division).
-const calculator = (a, b, operation) => {
-    switch (operation) {
-        case 'add': return a + b;
-        case 'subtract': return a - b;
-        case 'multiply': return a * b;
-        case 'divide': return a / b;
-        default: return 'Invalid operation';
-    }
-};
+// Task 10: Simple Calculator - Create a function that performs basic arithmetic operations (addition, subtraction, multiplication, division).
+const readline = require('readline');
+const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 
-const number1 = 15;
-const number2 = 5;
-const operation = 'add';
-console.log(`The result of ${operation}ing ${number1} and ${number2} is: ${calculator(number1, number2, operation)}`);
+rl.question("Enter first number: ", (num1) => {
+    rl.question("Enter operator (+, -, *, /): ", (operator) => {
+        rl.question("Enter second number: ", (num2) => {
+            const calculate = (a, op, b) => {
+                switch (op) {
+                    case '+': return a + b;
+                    case '-': return a - b;
+                    case '*': return a * b;
+                    case '/': return a / b;
+                    default: return "Invalid operator";
+                }
+            };
+            console.log(`Result: ${calculate(parseFloat(num1), operator, parseFloat(num2))}`);
+            rl.close();
+        });
+    });
+});

@@ -1,6 +1,13 @@
-// Find Intersection of Two Arrays: Write a function that returns the common elements between two arrays.
-const findIntersection = (arr1, arr2) => arr1.filter(value => arr2.includes(value));
+// Task 12: Find Intersection of Two Arrays - Write a function that returns the common elements between two arrays.
+const readline = require('readline');
+const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 
-const array1 = [1, 2, 3, 4];
-const array2 = [3, 4, 5, 6];
-console.log(`Intersection: ${findIntersection(array1, array2)}`);
+rl.question("Enter the first array of numbers separated by spaces: ", (arr1) => {
+    rl.question("Enter the second array of numbers separated by spaces: ", (arr2) => {
+        const array1 = arr1.split(" ").map(Number);
+        const array2 = arr2.split(" ").map(Number);
+        const intersection = (a, b) => a.filter(value => b.includes(value));
+        console.log("Intersection of arrays:", intersection(array1, array2));
+        rl.close();
+    });
+});

@@ -1,5 +1,10 @@
-// Sort an Array of Numbers: Implement a sorting algorithm to sort an array.
-const sortArray = (arr) => arr.sort((a, b) => a - b);
+// Task 1: Sort an Array of Numbers - Implement a sorting algorithm (using a built-in method) to sort an array.
+const readline = require('readline');
+const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 
-const numbers = [5, 2, 8, 1, 4];
-console.log(`Sorted array: ${sortArray(numbers)}`);
+rl.question("Enter a list of numbers separated by spaces: ", (input) => {
+    const numbers = input.split(" ").map(Number);
+    const sortedArray = (arr) => arr.sort((a, b) => a - b);
+    console.log(`Sorted array: ${sortedArray(numbers).join(" ")}`);
+    rl.close();
+});

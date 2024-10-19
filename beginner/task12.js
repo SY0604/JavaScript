@@ -1,6 +1,11 @@
-// Generate Random Number: Create a function that generates a random number between a specified range.
-const randomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+// Task 12: Generate Random Number - Create a function that generates a random number between a specified range.
+const readline = require('readline');
+const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 
-const min = 1;
-const max = 100;
-console.log(`Random number between ${min} and ${max}: ${randomNumber(min, max)}`);
+rl.question("Enter the minimum value: ", (min) => {
+    rl.question("Enter the maximum value: ", (max) => {
+        const generateRandom = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+        console.log(`Random number: ${generateRandom(parseInt(min), parseInt(max))}`);
+        rl.close();
+    });
+});
