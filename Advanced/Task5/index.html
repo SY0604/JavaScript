@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy Loading Images</title>
+    <style>
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lazy Loading Images Example</h1>
+    <img data-src="https://via.placeholder.com/600x400" alt="Image 1" class="lazy">
+    <img data-src="https://via.placeholder.com/600x400/ff7f7f" alt="Image 2" class="lazy">
+    <img data-src="https://via.placeholder.com/600x400/7f7fff" alt="Image 3" class="lazy">
+    <img data-src="https://via.placeholder.com/600x400/ffff7f" alt="Image 4" class="lazy">
+    <img data-src="https://via.placeholder.com/600x400/7fff7f" alt="Image 5" class="lazy">
+    <script src="script.js"></script>
+</body>
+</html>
