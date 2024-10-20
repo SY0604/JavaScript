@@ -44,7 +44,7 @@ rl.question("Enter the throttle limit in milliseconds: ", (input) => {
 
     let intervalId = setInterval(() => {
         throttledFunction();
-    }, 200); // Calls the function every 200ms
+    }, 200);
 
     setTimeout(() => {
         clearInterval(intervalId);
